@@ -1,0 +1,67 @@
+.form{
+    padding: 0 1.5em;
+
+    &__group{
+        position: relative;
+
+        &:not(:first-child){
+            margin-top: 4em;
+        }
+    }
+
+    // styling the input ----- start
+    &__input{
+        color: inherit;
+        font-family: inherit;
+
+        width: 70%;
+        padding: 1em 1.5em;
+
+        border-radius: .15em;
+        border: none;
+        border-bottom: 3px solid transparent;
+
+        @include respond(tab-port){
+            width: 100%;
+        }
+    }
+
+    &__input:focus{
+        outline: none;
+        border-bottom: 3px solid $color-light-green;
+    }
+
+    &__input:-moz-ui-invalid{
+        box-shadow: none;
+    }
+
+    &__input:focus:invalid{
+        border-bottom: 3px solid rgb(226, 41, 41);
+    }
+    // styling the input ----- end
+
+    // styling the label ----- start
+    &__label{
+        font-family: inherit;
+        display: block;
+        font-weight: weights('bold');
+        color: $color-light-1;
+        top: -2em;
+        padding-left: 0.5em;
+        position: absolute;
+        transition: all .3s;
+    }
+
+    &__input:placeholder-shown + &__label{
+        font-weight: weights('lighter');
+        color: $color-dark-1;
+        padding-left: 1.5em;
+        top: .75em;
+        left: 0;
+
+        @include respond(tab-port){
+            top: 1.2em;
+        }
+    }
+    // styling the label ----- end
+}

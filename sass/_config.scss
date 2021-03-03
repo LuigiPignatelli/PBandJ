@@ -1,0 +1,93 @@
+// VARIABLES
+$color-light-1: #f4f4f4;
+$color-dark-1: #333;
+$color-dark-2: #999 !default;
+
+$color-versatile-0:rgb(255, 197, 91);
+$color-versatile-1:rgb(231, 165, 42);
+
+$color-versatile-2: rgb(211, 80, 80);
+$color-versatile-3: rgb(207, 58, 12);
+
+$color-versatile-4: rgb(245, 165, 90);
+$color-versatile-5: rgb(247, 144, 26);
+$color-versatile-6: rgb(252, 112, 18);
+
+$color-light-green:rgb(49, 218, 113);
+
+// $twitter: #1da1f2;
+// $insta: #e95950;
+// $fb: #3b5998;
+// $wa: #4dc247;
+
+
+$bg-main: #f9f9f9;
+
+$font-weight: (
+    'lighter': 100,
+    'light': 300,
+    'regular': 400,
+    'bold': 700
+);
+
+$default-f-s: 1em !default;
+
+$margins: .7, 1.5, 3, 5, 7;
+$name: 'smaller', 'small', 'regular', 'big', 'bigger';
+$margin-bottom: ('smaller': .7, 'small': 1.5, 'regular': 3, 'big': 5, 'bigger': 7);
+$margin-right: ('smaller': .7, 'small': 1.5, 'regular': 3, 'big': 5, 'bigger': 7);
+
+
+// GRID
+$v-gutter: 5em;
+$small-v-gutter: 3em;
+$h-gutter: 4em;
+// $max-w: 1140px;
+$max-w: 71.25em;
+
+// FUNCITONS
+@function text-color($background){
+
+    @if (lightness($background) > 65) {
+        @return $color-dark-2;
+    } @else {
+        @return $color-light-1;
+    }
+};
+
+@function weights($weight-name){
+    @return map-get($font-weight, $weight-name);
+};
+
+// MIXINS
+@mixin text-bg($background) {
+    color: text-color($background);
+    background-color: $background;
+};
+
+@mixin fix-floats{
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+
+// MEDIA QUERY MANAGER
+
+@mixin respond($breakpoint) {
+    
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em){ @content };
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and(max-width: 56.25em){ @content };
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and(max-width: 75em){ @content };
+    }
+    @if $breakpoint == big-desk {
+        @media only screen and (min-width: 112.5em){ @content };
+    }
+}

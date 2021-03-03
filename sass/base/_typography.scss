@@ -1,0 +1,121 @@
+.heading-primary{
+    color: $color-light-1;
+    text-transform: capitalize;
+    margin-bottom: 2em;
+
+    
+    &--main{
+        display: block;
+        font-size: 4rem;
+        font-weight: weights('lighter');
+        letter-spacing: .1em;
+        animation: fadeUp 5s ease;
+        animation-fill-mode: forwards;
+
+        // it starts to look weird at 1085px, so at tablet landscape mode
+        // MEDIA QUERY
+        @include respond(tab-land){
+            font-size: 3.5rem;
+            letter-spacing: .06em;
+        }
+        @include respond(tab-port){
+            font-size: 2.96rem;
+            letter-spacing: 0;
+            animation: fadeUp--small 5s ease;
+            animation-fill-mode: forwards;
+        }
+        @include respond(phone){
+            font-size: 1.8rem;
+        }
+    }
+
+    &--sub{
+        display: block;
+        font-size: 3.6rem;
+        font-weight: weights('light');
+        letter-spacing: .15em;
+        word-spacing: .2em;
+        animation: fadeDown 4s .35s cubic-bezier(0.45, 0, 0.55, 1);
+        animation-fill-mode: both;
+
+        // MEDIA QUERY
+        @include respond(tab-land){
+            font-size: 3.3rem;
+            letter-spacing: .1em;
+            word-spacing: .1em;
+        }
+        @include respond(tab-port){
+            font-size: 2.9rem;
+            letter-spacing: .05em;
+            word-spacing: .05em;
+            animation: fadeDown--small 4s .35s cubic-bezier(0.45, 0, 0.55, 1);
+            animation-fill-mode: both;
+        }
+        @include respond(phone){
+            font-size: 1.8rem;
+            letter-spacing: .02em;
+            word-spacing: .02em;
+        }
+    }
+}
+
+.heading-secondary{
+    font-size: 2.5em;
+    font-weight: weights('regular');
+
+    // MEDIA QUERY
+    @include respond(tab-port){
+        font-size: 2rem;
+    }
+    // @include respond(phone){
+    //     font-size: 1.5rem;
+    // }
+
+    &--color{
+        color: $color-versatile-1;
+        font-style: italic;
+    }
+
+    &--white{
+        color: $color-light-1;
+    }
+}
+
+.heading-tertiary{
+    font-size: 1.1em;
+    font-weight: weights('bold');
+    text-transform: uppercase;
+
+    // MEDIA QUERY
+    @include respond(phone){
+        font-size: 1em;
+    }
+}
+
+.heading-quaternary{
+    font-size: .9em;
+    font-weight: weights('bold');
+    letter-spacing: .2em;
+
+    &--white{
+        color: $color-light-1;
+    }
+}
+
+.paragraph{
+    font-size: $default-f-s;
+    &:not(:last-child){
+        margin-bottom: 2em;
+    }
+}
+
+.sub-paragraph{
+    font-size: $default-f-s;
+    width: 55%;
+    margin: 0 auto;
+    text-align: center;
+
+    @include respond(phone){
+        width: 80%;
+    }
+}

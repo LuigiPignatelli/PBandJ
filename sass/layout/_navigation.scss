@@ -1,0 +1,198 @@
+.navigation{
+    position: relative;
+
+    &__button{
+        display: inline-block;
+        width: 3em;
+        height: 3em;
+        position: fixed;
+        top: 4em;
+        right: 4em;
+        z-index: 10;
+        cursor: pointer;
+        text-align: center;
+
+        // MEDIA QUERY
+        // reposition the button
+        @include respond(tab-port){
+            top: 2.5em;
+            right: 2.5em; 
+        }
+        @include respond(phone){
+            width: 2.5em;
+            height: 2.5em;
+        }
+    }
+
+    &__checkbox{
+        display: none;
+    }
+
+    &__menu{
+        height: 100vh;
+        // width: 0%;
+        width: 25%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-60%);
+        background-color: rgba($color-dark-1, $alpha: .9);
+        z-index: 9;
+        // open the menu
+        opacity: 0;
+        visibility: hidden;
+        transition: all .65s .2s cubic-bezier(0.87, 0, 0.13, 1);
+
+        // MEDIA QUERY
+        @include respond(tab-land){
+            width: 35%
+        }
+        @include respond(tab-port){
+            width: 40%
+        }
+        @include respond(phone){
+            width: 60%
+        }
+    }
+
+    &__list{
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        text-transform: uppercase;
+        // transition: all .3s;
+    }
+
+    &__item{
+        margin: 2em 0;
+    }
+
+    &__link{
+        display: inline-block;
+        font-size: 1.5em;
+        font-weight: weights('lighter');
+        color: $color-light-1;
+        position: relative;
+        transition: transform .2s;
+
+        // common style
+        &::before, &::after{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            height: 2px;
+            width: 0;
+            background-color: $color-light-1;
+            transition: width .45s;
+        }
+
+        &::before{
+            top: 0;
+            right: 0;
+        }
+
+        &::after{
+            bottom: 0;
+            left: 0;
+        }
+
+        &:hover{
+            transform: translateX(-.5em);
+
+            &::before, &::after{ 
+                width: 100% 
+            }
+        }
+    }
+
+
+    &__toggle{
+        // only the toggle
+        height: .5em;
+        position: relative;
+        background-color: rgb(143, 54, 54);
+
+        // all of them - common style
+        &, &::before, &::after{
+            display: inline-block;
+            width: 2.5em;
+            border-radius: 2px;
+            transition: all .4s;
+        }
+
+        // only pseudo-elements - common style
+        &::before, &::after{
+            content: '';
+            height: .3em;
+            position: absolute;
+            background-color: rgb(216, 145, 14);
+        }
+        &::before{
+            top: -.7em;
+            right: 0;
+
+        }
+        &::after{
+            top: .9em;
+            right: 0;
+        }
+    }
+
+    // --------------------------------------------
+
+    // TOGGLE HOVER EFFECT
+    // when we hover over the toggle we change width (from the left) and top
+    &__button:hover &__toggle{
+        width: 1.8em;
+    }
+    &__button:hover &__toggle::before{
+        width: 1.5em;
+        top: -.9em;
+        // right: 0;
+    }
+    &__button:hover &__toggle::after{
+        width: 2em;
+        top: 1.1em;
+        // right: 0;
+    }
+ 
+    // TOGGLE CLICK EFFECT
+    &__checkbox:checked + &__button &__toggle,
+    &__checkbox:checked + &__button:hover &__toggle{
+        background: transparent;
+        // the width was causing trouble becuase when the hamburger-toggle is hovered all the components srunk and if we don't restore the full width they had before they keep srinking even after, even when we animate the toggle to make an X. In this case we have to make sure that they have the same width when we hover because at the beginning we changed the width in hover state
+        width: 2.5em;
+    }
+    &__checkbox:checked + &__button &__toggle::before,
+    &__checkbox:checked + &__button:hover &__toggle::before{
+        width: 2.5em;
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    &__checkbox:checked + &__button &__toggle::after,
+    &__checkbox:checked + &__button:hover &__toggle::after{
+        width: 2.5em;
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    // CHECKED TOGGLE SPINNING EFFECT
+    &__checkbox:checked:hover + &__button &__toggle::before{
+        transform: rotate(135deg); // 45deg for less spinning
+    }
+    &__checkbox:checked:hover + &__button &__toggle::after{
+        transform: rotate(225deg); //135deg for less spinning
+    }
+
+    // --------------------------------------------
+
+    // OPEN THE "MENU" WITH THE TOGGLE
+    &__checkbox:checked ~ &__menu{
+        transform: translateX(0%);
+        opacity: 1;
+        visibility: visible;
+    }
+}

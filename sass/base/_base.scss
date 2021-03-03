@@ -1,0 +1,36 @@
+:root{
+    font-size: 1em;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+
+    @include respond(tab-land){     //1200 to 900
+        font-size: .95em;
+    }
+    @include respond(tab-port){     //900 to 600
+        font-size: .85em;
+    }
+
+    // this is the largest and it has a min width, so it goes last
+    @include respond(big-desk){     //1800+
+        font-size: 1.15em;
+    }
+}
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: weights('regular');
+    @include text-bg($bg-main);
+    line-height: 1.5;
+    // overflow-x: hidden;
+}
+
+ul{ list-style: none;}
+
+a{ text-decoration: none;}

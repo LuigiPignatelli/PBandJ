@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicon/android-chrome-144x144.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#603cba">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>PB & J | Taste Experience</title>
+    </head>
+
+    <body>
+        
+        <!-- NAVIGATION -->
+        <div class="navigation">
+
+            <input class="navigation__checkbox" type="checkbox" id="menu-button">
+            <label class="navigation__button" for="menu-button">
+                <span class="navigation__toggle"></span>
+            </label>
+
+            <nav class="navigation__menu">
+
+                <div class="navigation__logo-box">
+                    <div class="navigation__logo"></div>
+                </div>
+
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#about-section" class="navigation__link">about</a></li>
+                    <li class="navigation__item"><a href="#features-section" class="navigation__link">menu</a></li>
+                    <li class="navigation__item"><a href="#booking-section" class="navigation__link">find us</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">price</a></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div class="header__logo-box">
+                <!-- DENSITY SWITCHING: same image, different resolution -->
+                <img srcset="../img/burger--1x.png 1x,../img/burger--2x.png 2x" alt="logo" class="header__logo" src="../img/burger--2x.png">
+                <!-- <img src="/img/Burger-header--large.png" alt="logo" class="header__logo"> -->
+            </div>
+
+            <div class="header__content">
+
+                <h1 class="heading-primary">
+                    <span class="heading-primary--main">enjoy your meal</span>
+                    <span class="heading-primary--sub">and have fun</span>
+                </h1>
+
+                <div class="extend">
+                    <a href="#features-section" role="button" class="btn btn--white pulse btn--fadeUp">Reservation</a>
+                </div>
+                <a href="#" role="button" class="btn-ghost btn-ghost--white btn-ghost--fadeUp">find more</a>
+                
+            </div>
+
+        </header>
+
+
+        <main>
+
+            <!-- ABOUT -->
+            <section class="about-section" id="about-section">
+    
+                <!-- margin utility classes go here on the div -->
+                <div class="text-center margin-b-regular">
+                    <h2 class="heading-secondary">You're always <span class="heading-secondary--color">welcome</span></h2>
+                </div>
+    
+                <div class="row">
+    
+                    <div class="col-1-of-2">
+                        <h3 class="heading-tertiary margin-b-smaller">Our recepies are made with love</h3>
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, voluptates.</p>
+    
+                        <h3 class="heading-tertiary margin-b-smaller">Fresh ingredients anytime</h3>
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, voluptates.</p>
+    
+                        <h3 class="heading-tertiary margin-b-smaller">Big size food</h3>
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, voluptates.</p>
+
+                        <a href="#" class="btn-ghost btn-ghost--dark">full recepies &rarr;</a>
+
+                    </div>
+    
+                    <div class="col-1-of-2">
+                        <div class="composition">
+
+                            <!-- RESOLUTION SWITCHING -->
+                            <img 
+                                srcset="../img/dish-1--small.jpg 300w, ../img/dish-1--large.jpg 1280w"
+                                sizes="(max-width: 56.25em) 18w, (max-width: 25em) 28w"
+                                src="../img/dish-1--large.jpg"
+                                alt="pasta"
+                                class="composition__image composition__image--1"
+                            >
+
+                            <img 
+                                srcset="../img/dish-2--samll.jpg 300w, ../img/dish-2--large.jpg 1280w"
+                                sizes="(max-width: 56.25em) 20w, (max-width: 25em) 30w"
+                                src="../img/dish-2--large.jpg" 
+                                alt="pizza" 
+                                class="composition__image composition__image--2"
+                            >
+
+                            <img
+                                srcset="../img/dish-4--small.jpg 300w, ../img/dish-4--large.jpg 1280w"
+                                sizes="(max-width: 56.25em) 18w, (max-width: 25em) 28w"
+                                src="../img/dish-4--large.jpg" 
+                                alt="fries" 
+                                class="composition__image composition__image--3"
+                            >
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FEATURES -->
+            <section class="features-section" id="features-section">
+
+                <!-- margin utility classes go here on the div -->
+                <div class="text-center margin-b-regular">
+                    <h2 class="heading-secondary">
+                        We like to make our guest <span class="heading-secondary--color">comfortable</span>
+                    </h2>
+                </div>
+
+                <p class="sub-paragraph margin-b-bigger">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, repellat.</p>
+
+                <div class="row">
+                    
+                    <!-- FIRST COLUMN, FIRST CARD -->
+                    <div class="col-1-of-3">
+
+                        <div class="card">
+
+                            <!-- FRONT -->
+                            <div class="card__side card__side--front">
+
+                                <div class="card__pic card__pic--1"></div>
+                                <h4 class="card__cap card__cap--1">Pub Menu</h4>
+
+                                <div class="card__price">$25</div>
+
+                            </div>
+
+                            <!-- BACK -->
+                            <div class="card__side card__side--back card__side--back-1">
+                                <div class="card__menu">
+
+                                    <ul class="card__details">
+                                        <li>Two Belgium claws</li>
+                                        <li>Two Chicken Salad</li>
+                                        <li>Four Tuna and toast</li>
+                                        <li>One Tomatoe soup</li>
+                                    </ul>
+
+                                    <a href="#booking-section" class="btn btn--white">Order</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- SECOND COLUMN, SECOND CARD -->
+                    <div class="col-1-of-3">
+
+                        <div class="card">
+
+                            <!-- FRONT -->
+                            <div class="card__side card__side--front">
+
+                                <div class="card__pic card__pic--2"></div>
+                                <h4 class="card__cap card__cap--2">Bistro Menu</h4>
+
+                                <div class="card__price">$40</div>
+
+                            </div>
+
+                            <!-- BACK -->
+                            <div class="card__side card__side--back card__side--back-2">
+                                <div class="card__menu">
+
+                                    <ul class="card__details">
+                                        <li>Two Belgium claws</li>
+                                        <li>Two Chicken Salad</li>
+                                        <li>Four Tuna and toast</li>
+                                        <li>One Tomatoe soup</li>
+                                    </ul>
+
+                                    <a href="#booking-section" class="btn btn--white">Order</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- THIRD COLUMN, THIRD CARD -->
+                    <div class="col-1-of-3">
+
+                        <div class="card">
+
+                            <!-- FRONT -->
+                            <div class="card__side card__side--front">
+
+                                <div class="card__pic card__pic--3"></div>
+                                <h4 class="card__cap card__cap--3">Diner Menu</h4>
+
+                                <div class="card__price">$55</div>
+
+                            </div>
+
+                            <!-- BACK -->
+                            <div class="card__side card__side--back card__side--back-3">
+                                <div class="card__menu">
+
+                                    <ul class="card__details">
+                                        <li>Two Belgium claws</li>
+                                        <li>Two Chicken Salad</li>
+                                        <li>Four Tuna and toast</li>
+                                        <li>One Tomatoe soup</li>
+                                    </ul>
+
+                                    <a href="#booking-section" class="btn btn--white">Order</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center ">
+                    <a href="#" role="button" class="btn btn--dark margin-t-big">more menu</a>
+                </div>
+
+            </section>
+
+    
+            <!-- SPECIALS -->
+            <section class="slider-section">
+
+                <!-- margin utility classes go here on the div -->
+                <div class="text-center margin-b-regular">
+                    <h2 class="heading-secondary">Let us bring to you this <span class="heading-secondary--color">experience</span></h2>
+                </div>
+
+                <p class="sub-paragraph margin-b-bigger">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    
+                <div class="row">
+
+                    <div class="col-2-of-3">
+                        <div class="slider">
+
+                            <div class="slider__slides">
+                                <input class="slider__input slider__input--1" type="radio" name="hide" id="first">
+                                <input class="slider__input slider__input--2" type="radio" name="hide" id="second">
+                                <input class="slider__input slider__input--3" type="radio" name="hide" id="third">
+
+                                <!-- RESOLUTION SWITCHING -->
+                                <img
+                                    srcset="../img/nat-3--small.jpg 640w, ../img/nat-3--large.jpg 1280w"
+                                    sizes="(max-width: 56.25em) 52w, (max-width: 37.5em) 54w"
+                                    src="../img/nat-3--large.jpg" 
+                                    alt="img-1" 
+                                    class="slider__img slider__move"
+                                >
+
+                                <img 
+                                srcset="../img/nat-4--small.jpg 640w, ../img/nat-4--large.jpg 1280w"
+                                sizes="(max-width: 56.25em) 52w, (max-width: 37.5em) 54w"
+                                src="../img/nat-4--large.jpg" 
+                                alt="img-2" 
+                                class="slider__img">
+
+                                <img
+                                srcset="../img/nat-6--small.jpg 640w, ../img/nat-6--large.jpg 1280w"
+                                sizes="(max-width: 56.25em) 52w, (max-width: 37.5em) 54w" 
+                                src="../img/nat-6--large.jpg" 
+                                alt="img-3" 
+                                class="slider__img">
+
+                            </div>
+
+                            <div class="slider__navi">
+                                <label class="slider__circle slider__circle--1" for="first"></label>
+                                <label class="slider__circle slider__circle--2" for="second"></label>
+                                <label class="slider__circle slider__circle--3" for="third"></label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-1-of-3">
+                        <h3 class="heading-tertiary margin-b-smaller">This is what we offer</h3>
+                        <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum animi labore sint odit esse officia natus placeat.</p>
+
+                        <a href="#" role="button" class="btn-ghost btn-ghost--dark">See More &rarr;</a>
+                    </div>
+
+                </div>
+    
+            </section>
+
+
+            <!-- TESTIMONIALS -->
+            <section class="testimonials-section">
+
+                <div class="bg-video">
+
+                    <video class="bg-video__content" autoplay muted loop>
+                        <source src="/img/Delicious Pizza Slice.mp4" type="video/mp4">
+                        this video can't be displayed in your browser!
+                    </video>
+
+                </div>
+
+                <!-- margin utility classes go here on the div -->
+                <div class="text-center margin-b-big">
+                    <h2 class="heading-secondary heading-secondary--white">What our <span class="heading-secondary--color">costumers</span> say</h2>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-1-of-3">
+                        <blockquote class="quote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, perferendis consequuntur deleniti quidem ipsam eos ipsum ducimus laborum quod autem.
+                            <cite class="quote__cite"><img class="quote__image" src="/img/cus--2.jpg" alt="Jhon Scoot"> Jhon Scott</cite> 
+                        </blockquote>
+                    </div>
+
+                    <div class="col-1-of-3">
+                        <blockquote class="quote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, perferendis consequuntur deleniti quidem ipsam eos ipsum ducimus laborum quod autem.
+                            <cite class="quote__cite"><img class="quote__image" src="/img/cus--1.jpg" alt="Jhon Scoot"> Tayler Morgan</cite> 
+                        </blockquote>
+                    </div>
+
+                    <div class="col-1-of-3">
+                        <blockquote class="quote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, perferendis consequuntur deleniti quidem ipsam eos ipsum ducimus laborum quod autem.
+                            <cite class="quote__cite"><img class="quote__image" src="/img/cus--2.jpg" alt="Jhon Scoot"> Jhon Scott</cite> 
+                        </blockquote>
+                    </div>
+
+                </div>
+
+                <div class="text-center">
+                    <a href="#" role="button" class="btn-ghost btn-ghost--white">See More &rarr;</a>
+                </div>
+
+            </section>
+
+
+            <!-- BOOKING -->
+            <!-- this is the background color -->
+            <section class="booking-section" id="booking-section">
+
+                <!-- margin utility classes go here on the div -->
+                <div class="text-center margin-b-regular">
+                    <h2 class="heading-secondary heading-secondary--white">What are you waiting for?</h2>
+                </div>
+
+                <div class="row">
+                    <!-- this contains form + video and is indipendent from form-->
+                    <!-- <div class="book"></div> -->
+                    <!-- <div class="book__form"></div> -->
+                    <div class="col-1-of-2">
+
+                        <form action="#" class="form">
+                            <h2 class="heading-secondary heading-secondary--white margin-b-smaller">Stay tuned!</h2>
+                            <h4 class="heading-quaternary heading-quaternary--white">Place your order right here</h4>
+    
+                            <div class="form__group">
+                                <input type="text" id="text" class="form__input" placeholder=" " autocomplete="off" required>
+                                <label for="email" class="form__label">Name</label>
+                            </div>
+    
+                            <div class="form__group">
+                                <input type="email" id="eamil" class="form__input" placeholder=" " autocomplete="off" required>
+                                <label for="email" class="form__label">Address</label>
+                            </div>
+    
+                            <div class="form__group">
+                                <button class="btn btn--white">Order now</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="col-1-of-2">
+
+                        <div class="location">
+
+                            <picture>
+                                <source srcset="/img/restaurant--small.jpg" media="(max-width: 37.5em)">
+                                <img class="location__image" src="/img/restaurant--large.jpg" alt="Our Restaurant">
+                            </picture>
+                            <!-- <img class="location__image" src="/img/restaurant--large.jpg" alt="Our Restaurant"> -->
+
+                            <div class="location__info">
+                                <address class="location__address">
+                                    <ion-icon name="map-outline"></ion-icon>
+                                    Jackson Garden Bulevard, 52
+                                </address>
+
+                                <a role="link" class="location__contact" href="mailto:PBandJ@yahoo.com">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    PBandJ@yahoo.com
+                                </a>
+
+                                <a role="link" class="location__contact" href="tel:+555 555 555">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                    555 555 555
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- this is the container for the video -->
+                <!-- it needs to be positioned near to the section tag -->
+                <!-- <div class="bg-video">
+
+                    <video class="bg-video__content" autoplay muted loop>
+                        <source src="/img/Delicious Pizza Slice.mp4" type="video/mp4">
+                        this video can't be displayed in your browser!
+                    </video>
+
+                </div> -->
+                
+            </section>
+            
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <div class="footer__logo-box margin-b-regular">
+
+                <picture>
+                    <!-- ART DIRECTION: images for different screen sizes -->
+                    <source srcset="../img/burger-small--1x.png 1x,../img/burger-small--2x.png 2x" media="(max-width:  37.5em)">
+                    <!-- DENSITY SWITCHING images for different screen resolutions-->
+                    <img srcset="../img/burger-large--1x.png 1x,../img/burger-large--2x.png 2x," alt="burger" class="footer__logo" src="../img/burger-large--1x.png">
+                </picture>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-1-of-2">
+
+                    <div class="footer__navigation">
+                        <ul class="footer__list">
+
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">find us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">policy</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">terms</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">company</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-1-of-2">
+
+                    <div class="footer__icons">
+                        <ul class="footer__icon-list">
+
+                            <li class="footer__icon-item">
+                                <a href="#" class="footer__icon-link"><ion-icon name="logo-twitter"></ion-icon></a>
+                            </li>
+                            <li class="footer__icon-item">
+                                <a href="#" class="footer__icon-link"><ion-icon name="logo-instagram"></ion-icon></a>
+                            </li>
+                            <li class="footer__icon-item">
+                                <a href="#" class="footer__icon-link"><ion-icon name="logo-facebook"></ion-icon></a>
+                            </li>
+                            <li class="footer__icon-item">
+                                <a href="#" class="footer__icon-link"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="footer__copyright">PB & J, 2021 &copy;, All Rights Reserved</p>
+        
+        </footer>
+
+        <!-- ionicons icons -->
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+    </body>
+</html>

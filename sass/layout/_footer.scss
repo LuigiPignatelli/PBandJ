@@ -1,0 +1,130 @@
+.footer{
+    @include text-bg($color-dark-1);
+    padding: 8em 0 3em;
+
+    // MEDIA QUERY
+    // decrease the padding
+    @include respond(tab-port){
+        padding: 6em 0 2em;
+    }
+
+
+    // we use a div to position the element and give it a specific size
+    // this way we use the div to center the child and then we give a specific size to the child
+    &__logo-box{
+        text-align: center;
+        margin-bottom: 5em;
+
+        // MEDIA QUERY
+        // decrease the margin-bottom
+        @include respond(tab-port){
+            margin-bottom: 3.5em;
+        }
+    }
+
+    // give it a height instead of span all around the main div
+    &__logo{
+        height: 7em;
+        width: auto;
+
+        // MEDIA QUERY
+        // decrease the size of the image
+        @include respond(tab-port){
+            height: 5em;
+        }
+    }
+
+    // main footer navigation
+    &__navigation{
+        text-align: center;
+    }
+
+    // unordered list
+    &__list{
+        list-style: none;
+    }
+
+    // list item
+    &__item{
+        display: inline-block;
+        text-align: center;
+        padding: 1em;
+
+        // MEDIA QUERY
+        // decrease padding and margin
+        @include respond(phone){
+            padding: .5em;
+        }
+
+        &:not(:last-child){
+            margin-right: 1em;
+
+            // MEDIA QUERY
+            // decrease the margin-right
+            @include respond(phone){
+                margin-right: .5em;
+            }
+        }
+    }
+
+    &__link{
+        
+        &:link, &:visited{            
+            display: inline-block;
+            color: $color-dark-2;
+            padding: .35em 0;
+            border-bottom: 1px solid transparent;
+            text-transform: uppercase;
+            transition: all .2s ease;
+        }
+
+        &:hover, &:active{
+            color: inherit;
+            border-bottom: 1px solid $color-light-1;
+            transform: scale(1.05);
+        }
+    }
+
+    // socials
+    &__icons{
+        text-align: center;
+    }
+
+    // unordered list
+    &__icon-list{
+        font-size: 1.8em;
+        list-style: none;
+    }
+
+    // list item
+    &__icon-item{
+        display: inline-block;
+        text-align: center;
+        padding: .5em;
+
+        &:not(:last-child){
+            margin-right: .3em;
+        }
+    }
+
+    &__icon-link{
+        &:link, &:visited{
+            display: inline-block;
+            color: $color-dark-2;
+            transition: all .2s ease;
+        }
+
+        &:hover, &:active{
+            color: inherit;
+            transform: scale(1.1);
+        }
+    }
+
+    // copyright
+    &__copyright{
+        font-size: .85em;
+        font-weight: weights('light');
+        text-align: center;
+        padding-top: 1.5em;
+    }
+}

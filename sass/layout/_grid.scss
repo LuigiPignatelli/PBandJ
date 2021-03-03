@@ -1,0 +1,67 @@
+.row{
+    max-width: $max-w;
+    margin: 0 auto;
+
+    &:not(:last-child){
+        margin-bottom: $v-gutter;
+
+        // MEDIA QUERY
+        // decrease the margin bottom
+        @include respond(tab-port){
+            margin-bottom: $small-v-gutter;
+        }
+    }
+
+    // MEDIA QUERY
+    // decrease the max-width because at the tablet portrait
+    // it will occupy 100% of the available with: basically elements need space from the edges
+    // add some padding for the same reason
+    @include respond(tab-port){
+        max-width: 40em;
+        padding: 0 2.5em;
+    }
+
+    @include fix-floats;
+}
+
+[class^=col-]{
+    float: left;
+    &:not(:last-child){
+        margin-right: $h-gutter;
+
+        // MEDIA QUERY
+        // remove margin-right because we make columns look like rows
+        // and give some space with margin-bottom
+        @include respond(tab-port){
+            margin-right: 0;
+            margin-bottom: $small-v-gutter;
+        }
+    }
+
+    // MEDIA QUERY
+    // make columns look just like rows
+    // It starts to look weird and it doesn't look good at phone mode
+    @include respond(tab-port){
+        width: 100% !important; // use !important to make sure to overwrite the width of the declarations down below
+    }
+}
+
+.col-1-of-2{
+    width: calc((100% - #{$h-gutter}) / 2);
+}
+
+.col-1-of-3{
+    width: calc((100% - 2 * #{$h-gutter}) / 3);
+}
+
+.col-1-of-4{
+    width: calc((100% - 3 * #{$h-gutter}) / 4);
+}
+
+.col-2-of-3{
+    width: calc(2 * (100% - 2 * #{$h-gutter}) / 3 + #{$h-gutter});
+}
+
+.col-2-of-4{
+    width: calc(2 * (100% - 3 * #{$h-gutter}) / 4 + #{$h-gutter});
+}

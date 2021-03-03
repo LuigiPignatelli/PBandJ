@@ -1,0 +1,80 @@
+.about-section{
+    padding: 10em 0;
+    // without this we would see the bg-video
+    @include text-bg($bg-main);
+
+    // MEDIA QUERY
+    // decrease the padding
+    @include respond(tab-port){
+        padding: 7em 0;
+    }
+    @include respond(phone){
+        padding: 6em 0 8em;
+    }
+}
+
+// -----------------------------
+
+.features-section{
+    background-image: linear-gradient(to bottom, rgba($color-light-1, $alpha: .95), rgba($color-light-1, $alpha: .9)), url('../img/nat-2--small.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 10em 0;
+
+    // MEDIA QUERY
+    // decrease the padding
+    @include respond(tab-port){
+        padding: 7em 0;
+    }
+
+    // RESPONSIVE CSS IMAGE
+    @media(min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em){
+        background-image: linear-gradient(to bottom, rgba($color-light-1, $alpha: .95), rgba($color-light-1, $alpha: .9)), url('../img/nat-2--large.jpg');
+    }
+}
+
+// ------------------------------
+
+.slider-section{
+    padding: 10em 0;
+    background-color: $bg-main;
+
+    // MEDIA QUERY
+    // decrease the padding
+    @include respond(tab-port){
+        padding: 7em 0;
+    }
+}
+
+// ------------------------------
+
+.testimonials-section{
+    padding: 10em 0;
+    background: linear-gradient(rgba($color-dark-1, $alpha: .8), rgba($color-dark-1, $alpha: .8));
+    color: $color-light-1;
+    position: relative;
+
+    // MEDIA QUERY
+    // decrease the padding
+    @include respond(tab-port){
+        padding: 7em 0;
+    }
+}
+
+// ------------------------------
+
+.booking-section{
+    padding: 10em 0 6em;
+    background: linear-gradient(to right bottom, rgba($color-versatile-6, $alpha: 1), rgba($color-versatile-5, $alpha: 1));
+
+    // MEDIA QUERY
+    // decrease the padding
+    @include respond(tab-port){
+        padding: 7em 0;
+    }
+
+    // this proprety is for the video tag and content
+    // position: relative;
+}

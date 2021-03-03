@@ -1,0 +1,69 @@
+.composition{
+    position: relative;
+
+    &__image{
+        // this was cousing the overflowing
+        width: 40%;
+        border-radius: .3em;
+        overflow: hidden;
+        box-shadow: 0 1em 2.5em rgba($color-dark-1, $alpha: .4);
+        position: absolute;
+        transition: all .3s;
+
+        // MEDIA QUERY
+        // change position from absolute to relative to restore the natural flow and put them side by side with floats
+        @include respond(tab-port){
+            width: 50%;
+            position: relative;
+            float: left;
+            width: 33.33%;
+        }
+
+        &:hover{
+            transform: translate(-5%, -5%) scale(1.05);
+        }
+
+        &--1{
+            top: 1em;
+            left: 0;
+            transform: translateY(-10%) scale(.9);
+
+            // MEDIA QUERY
+            // change the position
+            @include respond(tab-port){
+                top: 0;
+                transform: translateY(0) scale(1);
+            }
+        }
+        &--2{
+            top: 1em;
+            left: 30%;
+
+            // MEDIA QUERY
+            // change the position
+            @include respond(tab-port){
+                top: 2em;
+                left: 0;
+                transform: scale(1.1);
+            }
+        }
+        &--3{
+            top: 1em;
+            left: 60%;
+            transform: translateY(10%);
+
+            // MEDIA QUERY
+            // change the position
+            @include respond(tab-port){
+                top: 4em;
+                left: 0;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &:hover &__image:not(:hover){
+        transform: translate(15%, 5%) scale(.95);
+        opacity: .95;
+    }
+}

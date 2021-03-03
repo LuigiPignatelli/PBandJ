@@ -1,0 +1,278 @@
+.card{
+    position: relative;
+    perspective: 120em;
+
+    &__side{
+        width: 100%;
+        height: 30em;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: .3em;
+        overflow: hidden;
+        box-shadow: 0 1em 3em rgba($color-dark-1, $alpha: .3);
+        transition: all 1s;
+
+        &--front{
+            background-color: white;
+            transform: rotateX(0);
+        }
+
+        &--back{
+            position: relative;
+            transform: rotateX(180deg);
+
+            &-1{
+                background: linear-gradient(to left bottom, $color-versatile-0, $color-versatile-1);
+            }
+            &-2{
+                background: linear-gradient(to left bottom, $color-versatile-2, $color-versatile-3);
+            }
+            &-3{
+                background: linear-gradient(to left bottom, $color-versatile-4, $color-versatile-5);
+            }
+        }
+    }
+
+    // MAIN EFFECT --- ROTATION
+    &:hover &__side--front{ 
+        animation: rotation-front 1s 1s;
+        animation-fill-mode: forwards;
+    }
+    &:hover &__side--back{ 
+        animation: rotation-back 1s 1s;
+        animation-fill-mode: forwards;
+    }
+    
+
+    // STYLING FRONT
+    &__pic{
+        height: 30em;
+        background-blend-mode: color;
+        background-size: cover;
+        transition: transform .45s ease;
+
+        // I changed background with background-image and it's a lot better because I can move bg-size in pic 
+        &--1{
+            background-image: linear-gradient(135deg, 
+            rgba($color-versatile-0, $alpha: .6) 0%, 
+            rgba($color-versatile-0, $alpha: .6) 20%,
+
+            rgba($color-dark-2, $alpha: .7) 20%, 
+            rgba($color-dark-2, $alpha: .7) 40%,
+
+            rgba($color-versatile-1, $alpha: .6) 40%,
+            rgba($color-versatile-1, $alpha: .6) 60%,
+            rgba($color-dark-2, $alpha: .6) 60%),
+            url('../img/pub-card--small.jpg');
+
+            // CSS RESOPNSIVE IMAGE
+            @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+            only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+            only screen and (min-width: 125em){
+                background-image: linear-gradient(135deg, 
+                rgba($color-versatile-0, $alpha: .6) 0%, 
+                rgba($color-versatile-0, $alpha: .6) 20%,
+    
+                rgba($color-dark-2, $alpha: .7) 20%, 
+                rgba($color-dark-2, $alpha: .7) 40%,
+    
+                rgba($color-versatile-1, $alpha: .6) 40%,
+                rgba($color-versatile-1, $alpha: .6) 60%,
+                rgba($color-dark-2, $alpha: .6) 60%),
+                url('../img/pub-card--large.jpg');
+            }
+        }
+
+        &--2{
+            background-image: linear-gradient(90deg, 
+            rgba($color-versatile-2, $alpha: .6) 0%, 
+            rgba($color-versatile-2, $alpha: .6) 10%,
+
+            rgba($color-dark-1, $alpha: .7) 10%, 
+            rgba($color-dark-1, $alpha: .7) 30%,
+
+            rgba($color-versatile-3, $alpha: .6) 30%,
+            rgba($color-versatile-3, $alpha: .6) 70%,
+            rgba($color-dark-2, $alpha: .6) 70%),
+            url('../img/bistro-card--small.jpg');
+
+            @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+            only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+            only screen and (min-width: 125em){
+                background-image: linear-gradient(90deg, 
+                rgba($color-versatile-2, $alpha: .6) 0%, 
+                rgba($color-versatile-2, $alpha: .6) 10%,
+    
+                rgba($color-dark-1, $alpha: .7) 10%, 
+                rgba($color-dark-1, $alpha: .7) 30%,
+    
+                rgba($color-versatile-3, $alpha: .6) 30%,
+                rgba($color-versatile-3, $alpha: .6) 70%,
+                rgba($color-dark-2, $alpha: .6) 70%),
+                url('../img/bistro-card--large.jpg');
+            }
+        }
+
+        // this one!
+        &--3{
+            background-image: linear-gradient(45deg, 
+            rgba($color-versatile-4, $alpha: .9) 0%, 
+            rgba($color-versatile-4, $alpha: .9) 15%,
+
+            rgba($color-dark-1, $alpha: .9) 15%, 
+            rgba($color-dark-2, $alpha: .9) 30%,
+
+            rgba($color-versatile-5, $alpha: .9) 30%,
+            rgba($color-versatile-5, $alpha: .9) 70%,
+            rgba($color-dark-1, $alpha: 1) 70%),
+            url('../img/coffeshop-card--small.jpg');
+
+            @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+            only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 37.5em),
+            only screen and (min-width: 125em){
+                background-image: linear-gradient(45deg, 
+                rgba($color-versatile-4, $alpha: .9) 0%, 
+                rgba($color-versatile-4, $alpha: .9) 15%,
+    
+                rgba($color-dark-1, $alpha: .9) 15%, 
+                rgba($color-dark-2, $alpha: .9) 30%,
+    
+                rgba($color-versatile-5, $alpha: .9) 30%,
+                rgba($color-versatile-5, $alpha: .9) 70%,
+                rgba($color-dark-1, $alpha: 1) 70%),
+                url('../img/coffeshop-card--large.jpg');
+            }
+        }
+    }
+
+    &__cap{
+        position: absolute;
+        width: 70%;
+        top: 4.5em;
+        left: 1em;
+        transition: all .6s ease;
+        border-radius: .2em;
+
+        font-size: 1.8em;
+        text-align: center;
+        font-weight: weights('lighter');
+        @include text-bg(rgba($bg-main, $alpha: .9));
+    }
+
+    &__price{
+        font-size: 6em;
+        text-align: center;
+        font-weight: weights('lighter');
+        color: $color-light-1;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__pic{ transform: scale(1.2);}
+
+
+    // STYLING BACK
+    &__menu{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        color: $color-light-1;
+        padding: 0 2em;
+    }
+
+    &__details{
+        margin-bottom: 3em;
+
+        li{
+            padding: 1em;
+
+            &:not(:last-child){
+                border-bottom: 1px dotted $color-light-1;
+            }
+        }
+    }
+}
+
+
+
+// RESPONSIVE CARD
+// on touch device the back part of these card will not be visible
+// so here we need to implement another media query feature, but we can't do it inside @include
+// here we need two restore the original media query
+// @include respond(tab-port)
+// this trick doesn't work anymore, there's more to fix
+// @media only screen and (max-width: 56.25em),
+// only screen and (hover: none)
+@include respond(tab-port){
+
+    .card{
+        border-radius: .3em;
+        overflow: hidden;
+        box-shadow: 0 1em 3em rgba($color-dark-1, $alpha: .3);
+        transition: all 1s;
+    
+        // SPLIT THE CARDS
+        &__side{
+            height: 16em;
+            position: relative;
+            // THESE WILL BE APPLIED TO THE CARD
+            box-shadow: none;
+            border-radius: 0;
+    
+            // REMOVE ROTATION EFFECT
+            &--back{
+                position: relative;
+                transform: rotateX(0);
+
+                height: auto;
+            }
+        }
+    
+        // REMOVE HOVER ROTATION
+        &:hover &__side--front, &:hover &__side--back{ 
+            animation: none;
+            animation-fill-mode: none;
+        }
+
+
+        // STYLING FRONT    
+        &__cap{
+            position: absolute;
+            top: 1.2em;
+            left: 1.2em;
+        }
+    
+        &__price{
+            font-size: 4.5em;
+            font-weight: weights('light');
+    
+            position: absolute;
+            top: 65%;
+            left: 65%;
+        }
+    
+    
+        // STYLING BACK
+        // CHANGE THE POSITION FROM ABSOLUTE TO RELATIVE
+        &__menu{
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+
+            padding: 1em 2em 1.5em;
+        }
+    
+        &__details{
+            margin-bottom: 1.5em;
+        }
+    }
+}

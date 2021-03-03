@@ -1,0 +1,72 @@
+.text-center{
+    text-align: center;
+}
+
+.extend{
+    display: inline-block;
+    margin-right: 3.5em;
+
+    // MEDIA QUERY
+    @include respond(phone){
+        display: block;
+        margin-right:0;
+        margin-bottom: 3.5em;
+    }
+}
+
+// margin top 
+.margin-t-smaller{ margin-top: .8em;}
+.margin-t-small{ margin-top: 1.5em;}
+.margin-t-regular{ margin-top: 3.5em;}
+.margin-t-big{ margin-top: 5em;}
+.margin-t-bigger{ margin-top: 6em;}
+
+// margin bottom
+.margin-b-smaller{ margin-bottom: .8em;}
+.margin-b-small{ margin-bottom: 1.5em;}
+.margin-b-regular{ 
+    margin-bottom: 3.5em;
+
+    // MEDIA QUERY
+    @include respond(tab-port){
+        margin-bottom: 2.8em !important; //but we don't really need !important
+    }
+}
+.margin-b-big{ 
+    margin-bottom: 5em;
+
+    // MEDIA QUERY
+    @include respond(tab-port){
+        margin-bottom: 4em;
+    }
+}
+.margin-b-bigger{ 
+    margin-bottom: 6em;
+
+    // MEDIA QUERY
+    @include respond(tab-port){
+        margin-bottom: 5em;
+    }
+}
+
+// margin right
+.margin-r-smaller{ margin-right: .8em;}
+.margin-r-small{ margin-right: 1.5em;}
+.margin-r-regular{ margin-right: 3.5em;}
+.margin-r-big{ margin-right: 5em;}
+.margin-r-bigger{ margin-right: 6em;}
+
+
+// margin bottom
+// @each $name, $margins in $margin-bottom {
+//     .margin-b-#{$name}{
+//         margin-bottom: #{$margins}em;
+//     }
+// }
+
+// margin right
+// @each $name, $margins in $margin-right {
+//     .margin-r-#{$name}{
+//         margin-right: #{$margins}em;
+//     }
+// }
